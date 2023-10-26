@@ -4,8 +4,7 @@
   "description": "Server app for user authentication and photo selection",
   "main": "index.js",
   "scripts": {
-    "start": "npx node",
-    "dev": "npx nodemon"
+    "start": "npx nodemon"
   },
   "author": "Antonio Doncel",
   "license": "ISC",
