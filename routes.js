@@ -17,6 +17,7 @@ module.exports = (app) => {
       .then((hashedPassword) => {
         // create a new user instance and collect the data
         const user = new User({
+          username: request.bode.username,
           email: request.body.email,
           password: hashedPassword,
         });
@@ -74,6 +75,7 @@ module.exports = (app) => {
               {
                 userId: user._id,
                 userEmail: user.email,
+                userName: user.username,
               },
               "RANDOM-TOKEN",
               { expiresIn: "24h" }
@@ -83,6 +85,7 @@ module.exports = (app) => {
             response.status(200).send({
               message: "Login Successful",
               email: user.email,
+              username: user.username,
               token,
             });
           })
