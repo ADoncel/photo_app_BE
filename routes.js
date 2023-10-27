@@ -17,7 +17,7 @@ module.exports = (app) => {
       .then((hashedPassword) => {
         // create a new user instance and collect the data
         const user = new User({
-          username: request.bode.username,
+          username: request.body.username,
           email: request.body.email,
           password: hashedPassword,
         });
